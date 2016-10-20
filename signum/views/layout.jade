@@ -3,5 +3,26 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='https://rawgit.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.min.js')
+    script.
+      $('*').on('click', function () {
+        $.smoothScroll({
+          scrollElement: $('body'),
+          scrollTarget: "#second"
+        });
+        return false;
+      });
+
   body
+    #nav
+      ul
+        li
+          a(href="#first") First
+        li
+          a(href="#second") Second
+        li
+          a(href="#third") Third
+        li
+          a(href="#fourth") Fourth
     block content
